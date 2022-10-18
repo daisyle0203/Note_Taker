@@ -1,8 +1,14 @@
+// Set up router
 const router = require("express").Router()
 
-const noteRoutes = require("./notes")
-const htmlRoutes = require("./html")
+// Set up api/notes and html route request
+const noteRouter = require("./notes")
+const htmlRouter = require("./html")
 
-router.use("/api/notes", noteRoutes)
+// Use api/notes for noteRouter
+router.use("/api/notes", noteRouter)
+// Other request, use htmlRouter
+router.use("/", htmlRouter)
 
+// Export the router
 module.exports = router
